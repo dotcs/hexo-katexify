@@ -1,16 +1,28 @@
-# hexo-simple-katex
-Hexo plugin for rendering TeX math by katex, with no extra dependency
+# hexo-katexify
+
+Hexo plugin for rendering TeX math by katex.
+This plugin is based on the work of [haripo](https://github.com/haripo/hexo-simple-katex).
 
 ## Installation
 
 ```
-$ npm install hexo-simple-katex --save
+$ npm install hexo-katexify --save
 ```
 
-Import katex.css
+or with [yarn](https://yarnpkg.com/en/)
 
 ```
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+yarn add hexo-katexify
+```
+
+Import katex.min.css (in template)
+
+```
+<head>
+  <!-- other code goes here -->
+
+  <link href="/katexify/katex.min.css" rel="stylesheet" />
+</head>
 ```
 
 ## Usage

@@ -1,27 +1,44 @@
 {
-  "name": "hexo-simple-katex",
+  "name": "hexo-katexify",
   "version": "1.0.0",
-  "description": "Hexo plugin for rendering TeX math by katex, with no extra dependency",
-  "main": "index.js",
+  "description": "Hexo plugin for rendering TeX math by katex",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "dev": "tsc --watch"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/haripo/hexo-simple-katex.git"
+    "url": "git+https://github.com/dotcs/hexo-katexify.git"
   },
   "keywords": [
     "hexo",
+    "math",
     "katex",
-    "math"
+    "latex"
   ],
-  "author": "haripo",
+  "author": "dotcs",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/haripo/hexo-simple-katex/issues"
+    "url": "https://github.com/dotcs/hexo-katexify.git"
   },
-  "homepage": "https://github.com/haripo/hexo-simple-katex#readme",
+  "homepage": "https://github.com/dotcs/hexo-katexify.git#readme",
+  "contributors": [
+    {
+      "name": "haripo",
+      "url": "https://github.com/haripo"
+    }
+  ],
   "dependencies": {
-    "katex": "^0.7.1"
+    "he": "^1.1.1",
+    "resolve": "^1.5.0",
+    "katex": "0.7.1"
+  },
+  "devDependencies": {
+    "@types/he": "^0.5.29",
+    "@types/katex": "^0.5.0",
+    "@types/node": "^9.3.0",
+    "typescript": "^2.6.2"
   }
 }
