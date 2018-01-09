@@ -6,18 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "dev": "tsc --watch"
+    "dev": "tsc --watch",
+    "prepublish": "yarn build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dotcs/hexo-katexify.git"
   },
-  "keywords": [
-    "hexo",
-    "math",
-    "katex",
-    "latex"
-  ],
+  "keywords": ["hexo", "math", "katex", "latex"],
   "author": "dotcs",
   "license": "MIT",
   "bugs": {
