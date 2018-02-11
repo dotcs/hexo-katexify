@@ -7,6 +7,7 @@
     "test:base": "jest --config ./jest.config.json --projects ./tsconfig.json",
     "test": "npm run test:base -- --watch",
     "test:ci": "npm run test:base -- --ci",
+    "prebuild": "npm run test:ci",
     "build": "tsc",
     "dev": "tsc --watch",
     "prepublish": "yarn build"
@@ -15,12 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/dotcs/hexo-katexify.git"
   },
-  "keywords": [
-    "hexo",
-    "math",
-    "katex",
-    "latex"
-  ],
+  "keywords": ["hexo", "math", "katex", "latex"],
   "author": "dotcs",
   "license": "MIT",
   "bugs": {
