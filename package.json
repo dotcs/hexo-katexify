@@ -4,7 +4,9 @@
   "description": "Hexo plugin for rendering TeX math by katex",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:base": "jest --config ./jest.config.json --projects ./tsconfig.json",
+    "test": "npm run test:base -- --watch",
+    "test:ci": "npm run test:base -- --ci",
     "build": "tsc",
     "dev": "tsc --watch",
     "prepublish": "yarn build"
@@ -28,13 +30,16 @@
   ],
   "dependencies": {
     "he": "^1.1.1",
-    "resolve": "^1.5.0",
-    "katex": "0.7.1"
+    "katex": "0.7.1",
+    "resolve": "^1.5.0"
   },
   "devDependencies": {
     "@types/he": "^0.5.29",
+    "@types/jest": "^22.1.2",
     "@types/katex": "^0.5.0",
     "@types/node": "^9.3.0",
+    "jest": "^22.2.2",
+    "ts-jest": "^22.0.3",
     "typescript": "^2.6.2"
   }
 }
