@@ -1,6 +1,6 @@
 {
   "name": "hexo-katexify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hexo plugin for rendering TeX math by katex",
   "main": "dist/index.js",
   "scripts": {
@@ -15,7 +15,12 @@
     "type": "git",
     "url": "git+https://github.com/dotcs/hexo-katexify.git"
   },
-  "keywords": ["hexo", "math", "katex", "latex"],
+  "keywords": [
+    "hexo",
+    "math",
+    "katex",
+    "latex"
+  ],
   "author": "dotcs",
   "license": "MIT",
   "bugs": {
