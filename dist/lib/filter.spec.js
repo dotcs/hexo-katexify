@@ -11,6 +11,16 @@ Here we have do no nothing. I repeat: Nothing!
     `;
         expect(filter_1.filter({ content })).toEqual({ content });
     });
+    it("should return the same object reference", () => {
+        const content = `
+# This is some content
+<!-- ignore this comment -->
+<h2 class="to-be-ignored">Please ignore me</h2>
+Here we have do no nothing. I repeat: Nothing!
+    `;
+        const obj = { content };
+        expect(filter_1.filter(obj)).toBe(obj);
+    });
     it("should find inline formula and replace it", () => {
         const content = `
 # This is some content
