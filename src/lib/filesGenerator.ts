@@ -20,7 +20,8 @@ interface HexoGeneratorItem {
 
 export async function filesGenerator() {
   const katexRoot = await asyncReqResolve("katex");
-  const katexRootDist = path.join(katexRoot, "..", "dist");
+  // const katexRootDist = path.join(katexRoot, "..", "dist");
+  const katexRootDist = path.join(katexRoot, "..");
   const katexFontDir = path.join(katexRootDist, "fonts");
 
   let provide: HexoGeneratorItem[] = [
