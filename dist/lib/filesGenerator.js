@@ -26,7 +26,8 @@ const asyncReqResolve = (path) => __awaiter(this, void 0, void 0, function* () {
 function filesGenerator() {
     return __awaiter(this, void 0, void 0, function* () {
         const katexRoot = yield asyncReqResolve("katex");
-        const katexRootDist = path.join(katexRoot, "..", "dist");
+        // const katexRootDist = path.join(katexRoot, "..", "dist");
+        const katexRootDist = path.join(katexRoot, "..");
         const katexFontDir = path.join(katexRootDist, "fonts");
         let provide = [
             {
