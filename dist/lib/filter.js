@@ -11,7 +11,7 @@ function filter(data) {
     });
     const regexp = new RegExp("\\$([^\\$]*)\\$", "mg");
     data.content = data.content.replace(regexp, (s) => {
-        return katex_1.renderToString(he_1.unescape(s).slice(1, -1)).trim();
+        return katex_1.renderToString(he_1.unescape(s).slice(1, -1).trim());
     });
     return data;
 }

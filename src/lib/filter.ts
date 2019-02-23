@@ -11,7 +11,7 @@ export function filter(data: { content: string }) {
 
   const regexp = new RegExp("\\$([^\\$]*)\\$", "mg");
   data.content = data.content.replace(regexp, (s: string) => {
-    return renderToString(unescape(s).slice(1, -1)).trim();
+    return renderToString(unescape(s).slice(1, -1).trim());
   });
   return data;
 }
