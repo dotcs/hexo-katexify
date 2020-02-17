@@ -53,4 +53,27 @@ This is a formula: $$E = mc^2$$.
         expect(responseContent).not.toContain("$");
         expect(responseContent).toMatchSnapshot();
     });
+    it("skip inside code block", () => {
+        const content = `
+        <code>var x = $(xxx); y = $ (aa);</code>
+      `;
+        const { content: responseContent } = filter_1.filter({ content });
+        expect(responseContent).toEqual(content);
+        expect(responseContent).not.toContain("katex");
+        expect(responseContent).toContain("(xxx); y = ");
+    });
+    it("skip inside inline code", () => {
+        const content = '`var x = $test; `  ` var y = $y;`';
+        const { content: responseContent } = filter_1.filter({ content });
+        expect(responseContent).toEqual(content);
+        expect(responseContent).not.toContain("katex");
+        expect(responseContent).toContain("test; `  ` var y = ");
+    });
+    it("latex with '`' ", () => {
+        const content = '$ \\text{ \\`{a} }$ `test inline code contains  $`';
+        const { content: responseContent } = filter_1.filter({ content });
+        expect(responseContent).not.toEqual(content);
+        expect(responseContent).toContain("katex");
+        expect(responseContent).not.toContain("$ \\text{ \\`{a} }$");
+    });
 });
