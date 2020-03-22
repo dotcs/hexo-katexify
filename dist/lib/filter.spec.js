@@ -53,7 +53,7 @@ This is a formula: $$E = mc^2$$.
         expect(responseContent).not.toContain("$");
         expect(responseContent).toMatchSnapshot();
     });
-    it("skip inside code block", () => {
+    it("should skip content inside html code block", () => {
         const content = `
         <code>var x = $(xxx); y = $ (aa);</code>
       `;
@@ -62,14 +62,14 @@ This is a formula: $$E = mc^2$$.
         expect(responseContent).not.toContain("katex");
         expect(responseContent).toContain("(xxx); y = ");
     });
-    it("skip inside inline code", () => {
+    it("should skip content inside markdown inline code", () => {
         const content = '`var x = $test; `  ` var y = $y;`';
         const { content: responseContent } = filter_1.filter({ content });
         expect(responseContent).toEqual(content);
         expect(responseContent).not.toContain("katex");
         expect(responseContent).toContain("test; `  ` var y = ");
     });
-    it("latex with '`' ", () => {
+    it("should not mix backticks in latex formulas with those in markdown code", () => {
         const content = '$ \\text{ \\`{a} }$ `test inline code contains  $`';
         const { content: responseContent } = filter_1.filter({ content });
         expect(responseContent).not.toEqual(content);
