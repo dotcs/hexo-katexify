@@ -1,6 +1,6 @@
 {
   "name": "hexo-katexify",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "Hexo plugin for rendering TeX math by katex",
   "main": "dist/index.js",
   "scripts": {
