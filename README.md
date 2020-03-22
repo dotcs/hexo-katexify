@@ -42,3 +42,22 @@ $$
 y = x^2 + 3
 $$
 ```
+
+## Release
+
+Steps to release a new version.
+
+```bash
+git flow release start 1.0.0
+
+# Then to the following steps:
+# - Update version number in package.json
+# - See if publishing would work: yarn run prepublish
+# - Make sure that all changes have been added, especially in the dist folder
+# - Commit any changes
+
+git flow release finish -p
+
+git checkout master
+npm publish
+```
